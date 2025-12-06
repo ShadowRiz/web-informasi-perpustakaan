@@ -66,13 +66,17 @@ $buku = [
     ]
 ]
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Informasi Perpustakaan</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/style/style.css?v=<?php echo time(); ?>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -91,15 +95,15 @@ $buku = [
                     <div class="kartu-buku">
                         <img src="<?= $item['gambar']; ?>" alt="<?= $item['judul']; ?>">
                         <div class="info-buku">
-                            <h3><?= $item['judul']; ?>"</h3>
+                            <h3><?= $item['judul']; ?></h3>
                             <p class="penulis">Penulis:<?= $item['penulis']; ?></p>
-                            <p class="kategori"><?= $item['kategori']; ?> | <?$item['tahun']; ?></p>
+                            <p class="kategori"><?= $item['kategori']; ?> | <?=$item['tahun']; ?></p>
                             <button class="btn-pinjam" onclick="bukaModal(
                             '<?= $item['judul']; ?>', 
                             '<?= $item['penulis']; ?>', 
                             '<?= $item['tahun']; ?>', 
                             '<?= $item['kategori']; ?>', 
-                            '<?= $item['gambar']; ?>'
+                            '<?= $item['gambar']; ?>',
                             '<?= $item['sinopsis']; ?>')">Lihat Detail Buku</button>
                         </div>
                     </div>
@@ -126,6 +130,6 @@ $buku = [
     <footer>
         <p>&copy; 2025 Perpustakaan Digital. All rights reserved.</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="assets/script/script.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>
